@@ -1,0 +1,29 @@
+{
+  "name": "react-animation-tactics-talk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.pixielabs.co.uk:pixielabs/the-pool-wheel.git"
+  },
+  "author": "",
+  "license": "Copyright",
+  "dependencies": {},
+  "devDependencies": {
+    "broccoli": "^0.13.2",
+    "broccoli-browserify": "^0.1.0",
+    "broccoli-merge-trees": "^0.2.1",
+    "broccoli-react": "^0.6.0",
+    "broccoli-sass": "^0.3.3",
+    "broccoli-static-compiler": "^0.2.1",
+    "browsernizr": "^1.0.2",
+    "domready": "^1.0.7",
+    "lodash": "^2.4.1",    
+    "react": "^0.12.0",
+    "react-animate": "^0.1.5"
+  }
+}
