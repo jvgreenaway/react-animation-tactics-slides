@@ -41,7 +41,7 @@ var styles = sass([bourbon, 'styles'], 'screen.sass', 'screen.css');
 
 // Jade
 
-var pages = jade('pages');
+var pages = jade('pages', {filename: 'pages/index'});
 
 
 
