@@ -3,6 +3,7 @@ var mergeTrees = require('broccoli-merge-trees'),
     filterReact = require('broccoli-react'),
     browserify = require('broccoli-browserify'),
     sass = require('broccoli-sass'),
+    jade = require('broccoli-jade'),
     pickFiles = require('broccoli-static-compiler');
 
 
@@ -37,6 +38,13 @@ var bourbon = pickFiles('bower_components/bourbon', {
 var styles = sass([bourbon, 'styles'], 'screen.sass', 'screen.css');
 
 
+
+// Jade
+
+var pages = jade('pages');
+
+
+
 // Vendor
 
 var normalize = pickFiles('bower_components/normalize.css', {
@@ -50,6 +58,6 @@ var vendorTree = mergeTrees([normalize]);
 
 // Export 
 
-var tree = mergeTrees([js, styles, vendorTree, publicTree], {overwrite: true});
+var tree = mergeTrees([js, styles, vendorTree, pages, publicTree], {overwrite: true});
 
 module.exports = tree;
