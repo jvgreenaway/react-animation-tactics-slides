@@ -16,7 +16,7 @@
   "devDependencies": {
     "broccoli": "^0.13.2",
     "broccoli-browserify": "^0.1.0",
-    "broccoli-jade": "^1.0.0",
+    "broccoli-jade": "jvgreenaway/broccoli-jade",
     "broccoli-merge-trees": "^0.2.1",
     "broccoli-react": "^0.6.0",
     "broccoli-sass": "^0.3.3",
