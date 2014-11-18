@@ -24,7 +24,8 @@ pre
   background-color: gray
   display: block
 
-.item
+.item,
+.delay-item
   background-color: blue
   height: 10px 
   width: 10px
@@ -52,7 +53,11 @@ pre
   background-color: white
   overflow-y: scroll
 
+  &.active
 
-@import modules/fade-in-group
+
+
+@import modules/fade-css-group
 @import modules/translate-in-group
 @import modules/modal-css-group
+@import modules/nth-child-delay-css-group

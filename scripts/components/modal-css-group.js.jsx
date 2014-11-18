@@ -24,10 +24,7 @@ module.exports = React.createClass({
     if (this.state.visible) {
       modalElements = [
         <div key='modal' className='modal'>
-          <button 
-            className='modal__btn' 
-            onClick={this.hide}
-          >Close</button>
+          <button className='modal__btn' onClick={this.hide}>Close</button>
         </div>,
         <div key='shade' className='shade' />
       ];
