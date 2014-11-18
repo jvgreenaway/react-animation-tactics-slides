@@ -1,5 +1,15 @@
+@import bourbon
+
+
 $sans: 'Merriweather Sans', sans-serif;
 $mono: 'Inconsolata', monospace;
+
+
+
+*, *:before, *:after
+  +box-sizing(border-box)
+
+
 
 body
   background-color: gray
@@ -20,6 +30,16 @@ pre
   width: 10px
   margin: 10px
   float: left
+
+
+
+// Impress
+
+.slide
+  width: 1200px
+  height: 720px
+  background-color: white
+
 
 
 @import modules/fade-in-group

@@ -32,7 +32,7 @@ js = browserify(js, {
 
 var bourbon = pickFiles('bower_components/bourbon', {
   srcDir: '/dist',
-  destDir: 'bourbon'
+  destDir: '/'
 });
 
 var styles = sass([bourbon, 'styles'], 'screen.sass', 'screen.css');
@@ -57,7 +57,13 @@ var normalize = pickFiles('bower_components/normalize.css', {
   destDir: '/vendor'
 });
 
-var vendorTree = mergeTrees([normalize]);
+var impress_js = pickFiles('bower_components/impress.js/js', {
+  srcDir: '/',
+  files: ['impress.js'],
+  destDir: '/vendor'
+});
+
+var vendorTree = mergeTrees([normalize, impress_js]);
 
 
 // Export 

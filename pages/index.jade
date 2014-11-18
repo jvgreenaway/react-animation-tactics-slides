@@ -1,8 +1,21 @@
 extends pages/_layout
 
 block body
-  h1 React Animation Tactics.
+  
+  #impress
+    - w = 1200 + 80
 
-  .demos 
-    include pages/demos/paged-item-delay
-    include pages/demos/fade-in-group
+    .step.slide(data-x=w*0)
+      h1 React Animation Tactics.
+
+    .step.slide.slide--demo(data-x=w*1)
+      include pages/demos/paged-item-delay
+    
+    .step.slide.slide--demo(data-x=w*2)
+      include pages/demos/fade-in-group
+
+
+  script(src='/vendor/impress.js')
+  script.
+    impress().init();
+
