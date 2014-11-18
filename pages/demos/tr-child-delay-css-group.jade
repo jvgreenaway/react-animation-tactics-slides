@@ -1,9 +1,12 @@
-h3 tr-child-delay-css-group
+h3.demo__title tr-child-delay-css-group
 
-pre.jsx: code
-  include:escape /scripts/components/tr-child-delay-css-group.js.jsx
+.demo__code
 
-pre.sass: code
-  include:escape /styles/modules/_tr-child-delay-css-group.sass
+  .demo__code__col.slide__code__col--jsx: pre: code
+    include:escape /scripts/components/tr-child-delay-css-group.js.jsx
 
-#tr-child-delay-css-group-demo.live
+  .demo__code__col.slide__code__col--sass: pre: code
+    include:escape /styles/modules/_tr-child-delay-css-group.sass
+
+.demo__run
+  #tr-child-delay-css-group-demo.live

@@ -1,6 +1,10 @@
 var React = require('react/addons'),
     TransitionGroup = React.addons.TransitionGroup
-    AnimateMixin = require('react-animate');
+    AnimateMixin = require('react-animate')
+    fromCSS = require('react-css').fromCSS;
+
+var from = fromCSS('{ transform: translate3d(0, 100%, 0); }'),
+    to = fromCSS('{ transform: translate3d(0, 0%, 0); }');
 
 
 var Modal = React.createClass({
@@ -21,7 +25,7 @@ var Modal = React.createClass({
     function next() {
       this.setState({showPanel: true});
       this.animate('panel', 
-        {transform: 'translate3d(0, 100%, 0)'}, {transform: 'translate3d(0, 0%, 0)'},
+        from, to,
         'in-out', 500, done
       );
     }    
@@ -69,7 +73,7 @@ module.exports = React.createClass({
     var modal = [];  
     if (this.state.visible) {
       modal = <Modal key='modal' onClose={this.hide} />;
-    }
+    } 
 
     return (
       <div>

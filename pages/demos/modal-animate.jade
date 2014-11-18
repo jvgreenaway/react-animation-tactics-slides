@@ -1,9 +1,12 @@
-h3 modal-animate
+h3.demo__title modal-animate
 
-pre.jsx: code
-  include:escape /scripts/components/modal-animate.js.jsx
+.demo__code
 
-pre.sass: code
-  include:escape /styles/modules/_modal-animate.sass
+  .demo__code__col.slide__code__col--jsx: pre: code
+    include:escape /scripts/components/modal-animate.js.jsx
 
-#modal-animate-demo.live
+  .demo__code__col.slide__code__col--sass: pre: code
+    include:escape /styles/modules/_modal-animate.sass
+
+.demo__run
+  #modal-animate-demo.live

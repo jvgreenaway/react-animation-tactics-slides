@@ -1,9 +1,8 @@
 @import bourbon
-
+@import ./flexbox
 
 $sans: 'Merriweather Sans', sans-serif;
 $mono: 'Inconsolata', monospace;
-
 
 
 *, *:before, *:after
@@ -18,6 +17,10 @@ body
 pre
   font-family: $mono
   white-space: pre
+  overflow: visible
+
+h1, h2, h3, h4, h5, h6
+  margin: 0
 
 
 .list
@@ -45,18 +48,62 @@ pre
 
 
 
-
 // Impress
 
 .slide
   width: 1200px
   height: 720px
   background-color: white
-  overflow-y: scroll
+  overflow: hidden
+  position: relative
 
   &.active
 
 
+
+.demo
+
+  &__title
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 100
+    line-height: 32px
+
+  &__code
+    height: 100%
+    padding-top: 32px
+    
+    &__col
+      width: 50%
+      height: 100%
+      overflow: scroll
+      position: absolute
+
+      & + &
+        right: 0
+
+      transition: all 300ms
+      
+      &.is-big
+        width: 80%
+      &.is-small
+        width: 20%
+
+  &__run
+    position: absolute
+    bottom: 0
+    right: 0
+
+    transition: all 300ms ease
+    transform: scale(0.5) translate3d(-10%, -10%, 0)
+    transform-origin: bottom right
+    opacity: 0.75
+    
+    &:hover
+      transform: scale(1) translate3d(-10%, -10%, 0)
+      opacity: 1
+  
 
 @import modules/fade-css-group
 @import modules/translate-in-group
