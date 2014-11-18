@@ -1,19 +1,10 @@
-$max-items: 20
-$delay: 250ms 
-
-.delay-item  
-  
+.tr-fade
   &.tr-enter
     opacity: 0.01
     transition: opacity 500ms ease-in
 
-    @for $i from 0 to $max-items
-      &:nth-child(#{$i+1})
-        transition-delay: $delay * $i
-
     &.tr-enter-active
       opacity: 1
-      
 
   &.tr-leave
     opacity: 1
@@ -21,5 +12,3 @@ $delay: 250ms
 
     &.tr-leave-active
       opacity: 0.01
-
-

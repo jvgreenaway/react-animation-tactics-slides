@@ -10,41 +10,43 @@ module.exports = React.createClass({
       items.push({id: i});
     };
     return {
-      items: items
+      items: items,
+      itemsPerPage: 3
     };
   },
 
   getInitialState: function() {
     return {
-      show: false
+      page: 1
     };
   },
 
-  show: function() {
-    this.setState({show: true});
-  },
-
-  hide: function() {
-    this.setState({show: false});
+  nextPage: function() {
+    this.setState({page: this.state.page+1});
   },
 
   render: function () {    
     function renderItem(item, i) {
+      var page = Math.floor(i/this.props.itemsPerPage),
+          pageId = i % this.props.itemsPerPage;
       return (
         <div 
           key={item.id}
-          className='delay-item'
+          className={'tr-delay-item tr-' + page + '-' + pageId}
         />
       );
     }
+
+    var slice = Math.min(this.state.page * this.props.itemsPerPage, this.props.items.length),
+        items = this.props.items.slice(0, slice);
+
     return (
       <div>
         <CSSTransitionGroup transitionName='tr' className='list'>
-          { this.state.show? this.props.items.map(renderItem.bind(this)):[] }
+          { items.map(renderItem.bind(this)) }
         </CSSTransitionGroup>
 
-        <button onClick={this.show}>Show</button>
-        <button onClick={this.hide}>Hide</button>
+        <button onClick={this.nextPage}>Next Page</button>
       </div>
     );
   }

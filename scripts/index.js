@@ -4,7 +4,8 @@ var React = require('react/addons'),
 var FadeInGroup = React.createFactory(require('./components/fade-css-group')),
     TranslateInGroup = React.createFactory(require('./components/translate-in-group')),
     ModalCSSGroup = React.createFactory(require('./components/modal-css-group'));
-    NthChildDelayCSSGroup = React.createFactory(require('./components/nth-child-delay-css-group'));
+    NthChildDelayCSSGroup = React.createFactory(require('./components/nth-child-delay-css-group')),
+    TrChildDelayCSSGroup = React.createFactory(require('./components/tr-child-delay-css-group'));;
 
 
 domready(function() {
@@ -28,5 +29,11 @@ domready(function() {
     NthChildDelayCSSGroup(), 
     document.getElementById('nth-child-delay-css-group-demo')
   );  
+
+  React.render(
+    TrChildDelayCSSGroup(), 
+    document.getElementById('tr-child-delay-css-group-demo')
+  );  
+
 
 });

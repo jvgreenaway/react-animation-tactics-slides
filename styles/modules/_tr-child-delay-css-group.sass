@@ -1,0 +1,24 @@
+$max-pages: 10
+$per-page: 3
+$delay: 250ms 
+
+.tr-delay-item  
+  transition: opacity $delay 
+
+  &.tr-enter
+    opacity: 0.01
+    
+    &.tr-enter-active
+      opacity: 1
+
+  &.tr-leave
+    opacity: 0
+    
+    &.tr-leave-active
+      opacity: 1
+  
+
+  @for $i from 0 to $max-pages
+    @for $j from 0 to $per-page
+      &.tr-enter.tr-#{$i}-#{$j}
+        transition-delay: $delay * $j
