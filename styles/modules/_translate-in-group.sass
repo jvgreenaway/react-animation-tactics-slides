@@ -1,0 +1,18 @@
+.item
+  transition: all 500ms ease
+
+
+  &.tr-enter
+    opacity: 0.01
+    transform: translate3d(0, 75%, 0)
+
+    &.tr-enter-active
+      opacity: 1
+      transform: translate3d(0, 0, 0)
+
+
+  &.tr-leave
+    opacity: 1
+    
+    &.tr-leave-active
+      opacity: 0.01
