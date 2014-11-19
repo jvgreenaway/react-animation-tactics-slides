@@ -30,9 +30,111 @@ block body
       include pages/demos/modal-animate-prefixed-from-css
 
 
-    //- .step.slide.slide--demo(data-x=w*2)
-      include pages/demos/fade-css-group
 
+    .step.slide.filler(data-x=w*7)
+      h1 React JS Animations & Tactics
+      p James Greenaway
+      p @jvgreenaway
+
+    .step.slide.filler(data-x=w*7)
+      img(src="/images/pixie-labs-logo.svg")
+
+    .step.slide.filler(data-x=w*7)
+      h1 Wine Cloud Decanter
+      img(src="/images/wine-cloud-decanter-logo.svg")
+      img(src="/images/wine-cloud-decanter-mock.png")
+
+    .step.slide.filler(data-x=w*7)
+      img(src="/images/wine-cloud-decanter-logo.svg")
+      img(src="/images/wine-cloud-decanter-mock.png")
+        
+    
+    .step.slide.filler(data-x=w*7)
+      h1 Web Transitions and Animations
+
+      ul
+        li Adding and removing classes
+        li JS animations
+      ul
+        li Layout, Paint, Composite
+        li GPU acceleration 
+        
+      a(href="http://www.html5rocks.com/en/tutorials/speed/high-performance-animations/") html5rocks - High Performance Animations
+
+
+    .step.slide.filler(data-x=w*7)
+      h1 CSSTransitionGroup
+
+      ul 
+        li Component that comes in React addons
+        li Adds and removes classes on child nodes
+        li Write transitions in CSS
+        li  
+          | Uses 
+          code CSSTransitionGroup
+          | under the hood
+  
+
+      a(href="http://facebook.github.io/react/docs/animation.html#high-level-api-reactcsstransitiongroup") React Docs - ReactCSSTransitionGroup
+
+
+
+    .step.slide.filler(data-x=w*7)
+      h2 CSSTransitionGroup transitions can fail
+      p Only use when animation isn't critical to the UX
+
+
+    .step.slide.filler(data-x=w*7)
+      h1 TransitionGroup
+
+      ul 
+        li Runs methods on child components before/after mount/unmount
+        li 
+          code componentWillEnter(callback)
+          code componentDidEnter()
+          code componentWillLeave(callback)
+          code componentDidLeave()
+
+      a(href="http://facebook.github.io/react/docs/animation.html#low-level-api-reacttransitiongroup") React Docs - ReactTransitionGroup
+
+
+    .step.slide.filler(data-x=w*7)
+      h1 JS Animations
+      
+      p
+        code requestAnimationFrame() 
+        | or GTFO
+
+
+    .step.slide.filler(data-x=w*7)
+      h1 Velocity.js
+
+      a(href="http://julian.com/research/velocity/") Velocity.js docs
+
+      a(href="https://github.com/tkafka/react-VelocityTransitionGroup")
+        strike tkafka/react-VelocityTransitionGroup
+
+
+    .step.slide.filler(data-x=w*7)
+      h1 React.animate
+
+      ul
+        li
+          strong: a(href="https://github.com/elierotenberg/react-animate") elierotenberg/react-animate
+        li
+          a(href="https://github.com/pleasetrythisathome/react.animate") pleasetrythisathome/react.animate
+
+
+    .step.slide.filler(data-x=w*7)
+      h1 Prefixing
+      
+      p: a(href="https://github.com/elierotenberg/react-styling-demo#react-css") elierotenberg/react-css fromCSS
+      p: a(href="http://modernizr.com/docs/#prefixed") Modernizr
+
+    
+    .step.slide.filler(data-x=w*7)
+      h1 Thank you
+    
 
   script(src='/vendor/impress.js')
   script.
