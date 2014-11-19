@@ -11,7 +11,7 @@ $mono: 'Inconsolata', monospace;
 
 
 body
-  background-color: gray
+  background-color: shade(#272822, 10%)
   font-family: $sans
 
 code
@@ -21,13 +21,13 @@ code
 pre
   white-space: pre
   overflow: visible
+  margin: 0 !important
 
 h1, h2, h3, h4, h5, h6
   margin: 0
 
 
 .list
-  background-color: gray
   display: block
 
 
@@ -92,7 +92,6 @@ $c: #0D578C
 .slide
   width: 1200px
   height: 720px
-  background-color: white
   overflow: hidden
   position: relative
 
@@ -100,18 +99,24 @@ $c: #0D578C
 
 
 
+
 .demo
+  background-color: tint(#272822, 5%)
+  
 
   &__title
     position: absolute
     top: 0
     left: 0
     z-index: 100
-    line-height: 32px
+    line-height: 48px
+    color: white
+    margin-left: 1em
+    font-size: 22px
 
   &__code
     height: 100%
-    padding-top: 32px
+    padding-top: 48px
     
     &__col
       width: 50%
@@ -130,17 +135,16 @@ $c: #0D578C
       &.is-small
         width: 20%
 
-      &:before
-        text-transform: uppercase
-        position: absolute
-        top: 0
-        right: 0
+      // &:before
+      //   text-transform: uppercase
+      //   position: absolute
+      //   top: 0
+      //   right: 0
 
-      &--jsx:before
-        content: 'jsx'
-
-      &--sass:before
-        content: 'sass'
+      // &--jsx:before
+      //   content: 'jsx'
+      // &--sass:before
+      //   content: 'sass'
 
 
   &__run
@@ -157,6 +161,52 @@ $c: #0D578C
       transform: scale(1) translate3d(-10%, -10%, 0)
       opacity: 1
   
+
+
+
+.filler
+  color: white
+  padding: 3em 8em 0
+
+  $gray: #eee
+
+  h1, h2, h3, h4, h5, h6
+    margin-bottom: 1.5em
+
+  h4
+    font-size: 22px
+
+  p, li, code
+    color: $gray
+    font-size: 22px
+    line-height: 1.5
+
+  li
+    margin-bottom: 0.75em
+
+  a
+    color: $gray
+    text-decoration: none
+    border-bottom: 1px solid $gray
+
+
+  .huge
+    text-align: center
+    font-size: 42px
+    padding: 0 4em
+    margin: 3em 0
+
+  .footnote
+    margin-top: 3em
+    font-size: 18px
+
+
+  .logo
+    max-width: 800px
+    margin: 40px auto
+    display: block
+
+
 
 @import modules/fade-css-group
 @import modules/translate-in-group

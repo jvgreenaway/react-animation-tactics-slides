@@ -3,7 +3,7 @@ extends pages/_layout
 block body
   
   #impress
-    - w = 1200 + 80
+    - w = 1200 + 120
 
     .step.slide.filler(data-x=w*0)
       h1 React JS Animations & Tactics
@@ -12,11 +12,11 @@ block body
 
 
     .step.slide.filler(data-x=w*1)
-      p What I’ve learnt about doing animations and transitions with React JS so far.
+      p.huge What I’ve learnt about doing animations and transitions with React JS so far.
 
 
     .step.slide.filler(data-x=w*2)
-      img(src="/images/pixie-labs-logo.svg")
+      img.logo(src="/images/pixie-labs-logo.svg")
     
     .step.slide.filler(data-x=w*3)
       h1 Web Transitions and Animations
@@ -27,9 +27,11 @@ block body
       ul
         li Layout, Paint, Composite
         li GPU acceleration 
-        
-      a(href="http://css-tricks.com/almanac/properties/t/transition/") CSS Tricks - Transition
-      a(href="http://www.html5rocks.com/en/tutorials/speed/high-performance-animations/") HTML 5 Rocks - High Performance Animations
+      
+      p.footnote
+        a(href="http://css-tricks.com/almanac/properties/t/transition/") CSS Tricks - Transition
+        br/
+        a(href="http://www.html5rocks.com/en/tutorials/speed/high-performance-animations/") HTML 5 Rocks - High Performance Animations
     
 
     .step.slide.filler(data-x=w*4)
@@ -41,10 +43,11 @@ block body
         li Write transitions in CSS
         li  
           | Uses 
-          code CSSTransitionGroup
+          code CSSTransitionGroup 
           | under the hood
   
-      a(href="http://facebook.github.io/react/docs/animation.html#high-level-api-reactcsstransitiongroup") React Docs - ReactCSSTransitionGroup
+      p.footnote
+        a(href="http://facebook.github.io/react/docs/animation.html#high-level-api-reactcsstransitiongroup") React Docs - ReactCSSTransitionGroup
 
 
     .step.slide.demo(data-x=w*5)
@@ -61,14 +64,14 @@ block body
 
 
     .step.slide.filler(data-x=w*9)
-      h2 CSSTransitionGroup Pros and Cons
+      h1 CSSTransitionGroup Pros and Cons
       
-      h4 Pro
+      h4 Pros
       ul
         li Nice to keep styles and animations together
         li You can use Autoprefixer as part of your build
 
-      h4 Con
+      h4 Cons
       ul
         li Batch updates can cause Transitions to fail
         li May cause CSS bloat
@@ -86,23 +89,26 @@ block body
         li Runs methods on child components before/after mount/unmount
         li 
           code componentWillEnter(callback)
+          br/
           code componentDidEnter()
+          br/
           code componentWillLeave(callback)
+          br/
           code componentDidLeave()
 
-      a(href="http://facebook.github.io/react/docs/animation.html#low-level-api-reacttransitiongroup") React Docs - ReactTransitionGroup
+      p.footnote
+        a(href="http://facebook.github.io/react/docs/animation.html#low-level-api-reacttransitiongroup") React Docs - ReactTransitionGroup
 
 
     .step.slide.filler(data-x=w*11)
       h1 JS Animations
       
-      p Updating DOM node style elements over time.
-
-      p
-        | Only 
-        code requestAnimationFrame() 
-        | will do.
-      
+      ul 
+        li Updating DOM node style elements over time.
+        li 
+          | Only 
+          code requestAnimationFrame() 
+          | will do.
 
 
     .step.slide.filler(data-x=w*12)
@@ -116,21 +122,24 @@ block body
         li D3 Easing functions
         li Nice API via mixin
       
-      a(href="https://github.com/pleasetrythisathome/react.animate") pleasetrythisathome/react.animate
+      p.footnote
+        a(href="https://github.com/elierotenberg/react-animate") elierotenberg/react-animate
+        br/
+        a(href="https://github.com/pleasetrythisathome/react.animate") pleasetrythisathome/react.animate
 
 
     .step.slide.demo(data-x=w*13)
       include pages/demos/modal-animate
 
     .step.slide.filler(data-x=w*14)
-      h2 TransitionGroup and React Animate Pros and Cons
+      h1 TransitionGroup with React Animate Pros and Cons
 
-      h3 Pros
+      h4 Pros
       ul
         li Use variables in animation definitions 
         li Chain animations with callbacks 
 
-      h3 Cons
+      h4 Cons
       ul
         li Harder to maintain with split concerns 
         li You have to prefix in your application code
@@ -166,9 +175,8 @@ block body
 
     .step.slide.filler(data-x=w*19)
       h1 Thank you
+
+      p James Greenaway
+      p @jvgreenaway
+
     
-
-  script(src='/vendor/impress.js')
-  script.
-    impress().init();
-

@@ -22,13 +22,13 @@ var Modal = React.createClass({
   componentWillEnter: function (done) {
     this.animate('shade', 
       {opacity: 0.01}, {opacity: 1}, 
-      'in-out', 500, next.bind(this)
+      'cubic-in-out', 250, next.bind(this)
     );
     function next() {
       this.setState({showPanel: true});
       this.animate('panel', 
         inFrom, inTo,
-        'in-out', 500, done
+        'cubic-in-out', 250, done
       );
     }    
   },
@@ -36,15 +36,17 @@ var Modal = React.createClass({
   componentWillLeave: function (done) {
     this.animate('panel', 
       outFrom, outTo,
-      'in-out', 500, next.bind(this)
+      'cubic-in-out', 250
     );
+    this.animate('shade', 
+      {opacity: 1}, {opacity: 0.01},
+      'cubic-in-out', 250, next.bind(this)
+    );
+
     function next() {
-      this.setState({showPanel: true});
-      this.animate('shade', 
-        {opacity: 1}, {opacity: 0.01},
-        'in-out', 500, done
-      );
-    }    
+      this.setState({showPanel: false});
+      done()
+    }
   },
 
   render: function() {

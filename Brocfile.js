@@ -63,7 +63,13 @@ var impress_js = pickFiles('bower_components/impress.js/js', {
   destDir: '/vendor'
 });
 
-var vendorTree = mergeTrees([normalize, impress_js]);
+var prism = pickFiles('bower_components/prismjs', {
+  srcDir: '/',
+  files: ['prism.js', 'prism-okaidia.css'],
+  destDir: '/vendor'
+});
+
+var vendorTree = mergeTrees([normalize, impress_js, prism]);
 
 
 // Export 

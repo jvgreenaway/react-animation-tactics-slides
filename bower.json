@@ -16,6 +16,7 @@
   "dependencies": {
     "normalize.css": "~3.0.2",
     "bourbon": "~4.0.2",
-    "impress.js": "~0.5.3"
+    "impress.js": "~0.5.3",
+    "prismjs": "*"
   }
 }

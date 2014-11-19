@@ -18,3 +18,9 @@ html.no-js(lang='en')
   body
 
     block body
+
+    script(src='/vendor/impress.js')
+    script(src='/vendor/prism.js')
+    link(rel='stylesheet', href='vendor/prism-okaidia.css')
+    script.
+      impress().init();
