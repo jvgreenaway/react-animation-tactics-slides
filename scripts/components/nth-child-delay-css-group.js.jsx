@@ -28,19 +28,20 @@ module.exports = React.createClass({
     this.setState({show: false});
   },
 
-  render: function () {    
-    function renderItem(item, i) {
-      return (
-        <div 
-          key={item.id}
-          className='delay-item'
-        />
-      );
-    }
+  _renderItem: function(item, i) {
+    return (
+      <div 
+        key={item.id}
+        className='delay-item'
+      />
+    );
+  },
+
+  render: function () {        
     return (
       <div>
         <CSSTransitionGroup transitionName='tr' className='list'>
-          { this.state.show? this.props.items.map(renderItem.bind(this)):[] }
+          { this.state.show? this.props.items.map(this._renderItem):[] }
         </CSSTransitionGroup>
 
         <div className='controls'>

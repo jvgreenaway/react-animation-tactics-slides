@@ -50,6 +50,8 @@ var Modal = React.createClass({
   },
 
   render: function() {
+    console.log(inFrom);
+
     return (
       <div>
         {this.state.showPanel? 

@@ -173,7 +173,9 @@ $c: #0D578C
   h1, h2, h3, h4, h5, h6
     margin-bottom: 1.5em
 
-  h4
+  h2
+    margin-top: 1.5em
+    margin-bottom: 1em
     font-size: 22px
 
   p, li, code
@@ -193,7 +195,7 @@ $c: #0D578C
   .huge
     text-align: center
     font-size: 42px
-    padding: 0 4em
+    padding: 0 3em
     margin: 3em 0
 
   .footnote
@@ -203,9 +205,17 @@ $c: #0D578C
 
   .logo
     max-width: 800px
-    margin: 40px auto
+    margin: 60px auto
     display: block
 
+
+  &.first
+    text-align: center
+    
+    h1
+      font-size: 52px
+    p
+      font-size: 28px
 
 
 @import modules/fade-css-group

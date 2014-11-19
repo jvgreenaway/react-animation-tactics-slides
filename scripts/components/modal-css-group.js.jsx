@@ -1,9 +1,7 @@
 var React = require('react/addons'),
     CSSTransitionGroup = React.addons.CSSTransitionGroup;
 
-
 module.exports = React.createClass({  
-  displayName: 'ModalCSSGroup',
 
   getInitialState: function() {
     return {
@@ -14,10 +12,10 @@ module.exports = React.createClass({
   show: function () {
     this.setState({visible: true});
   },
+
   hide: function () {
     this.setState({visible: false});
   },
-
 
   render: function () {    
     var modalElements = [];

@@ -5,14 +5,17 @@ block body
   #impress
     - w = 1200 + 120
 
-    .step.slide.filler(data-x=w*0)
-      h1 React JS Animations & Tactics
+    .step.slide.filler.first(data-x=w*0)
+      h1 
+        | React JS Transition 
+        br/
+        | & Animation Tactics
       p James Greenaway
       p @jvgreenaway
 
 
     .step.slide.filler(data-x=w*1)
-      p.huge What I’ve learnt about doing animations and transitions with React JS so far.
+      p.huge What I’ve learned about doing animations and transitions with React so far.
 
 
     .step.slide.filler(data-x=w*2)
@@ -20,14 +23,24 @@ block body
     
     .step.slide.filler(data-x=w*3)
       h1 Web Transitions and Animations
+      
+      ul
+        li Layout, Paint and Composite styles
+        li GPU acceleration
 
+      h2 CSS transitions
       ul
         li Adding and removing classes
-        li JS animations
-      ul
-        li Layout, Paint, Composite
-        li GPU acceleration 
       
+      h2 JavaScript Animations/Transitions  
+      ul 
+        li Updating DOM node style attributes over time.
+        li 
+          | Only 
+          code requestAnimationFrame() 
+          | will do.
+
+
       p.footnote
         a(href="http://css-tricks.com/almanac/properties/t/transition/") CSS Tricks - Transition
         br/
@@ -38,12 +51,12 @@ block body
       h1 CSSTransitionGroup
 
       ul 
-        li Component that comes in React addons
+        li Included in React addons
         li Adds and removes classes on child nodes
-        li Write transitions in CSS
+        li Write your transitions in CSS
         li  
           | Uses 
-          code CSSTransitionGroup 
+          code TransitionGroup 
           | under the hood
   
       p.footnote
@@ -66,27 +79,30 @@ block body
     .step.slide.filler(data-x=w*9)
       h1 CSSTransitionGroup Pros and Cons
       
-      h4 Pros
+      h2 Pros
       ul
         li Nice to keep styles and animations together
-        li You can use Autoprefixer as part of your build
+        li 
+          | You can use 
+          a(href="https://github.com/postcss/autoprefixer") Autoprefixer 
+          | as part of your build
 
-      h4 Cons
+      h2 Cons
       ul
-        li Batch updates can cause Transitions to fail
+        li Batch updates can cause transitions to fail
         li May cause CSS bloat
-        li Defining delayed animation as time rather than using a callback can be odd
+        li Defining sequences using time measurements rather than callbacks can produce unexpected behaviour
         li 
           | Risk of 
           i magic numbers
-
 
 
     .step.slide.filler(data-x=w*10)
       h1 TransitionGroup
 
       ul 
-        li Runs methods on child components before/after mount/unmount
+        li Runs functions on child components before/after mount/unmount
+        li Usually requires the definition of two components
         li 
           code componentWillEnter(callback)
           br/
@@ -101,17 +117,6 @@ block body
 
 
     .step.slide.filler(data-x=w*11)
-      h1 JS Animations
-      
-      ul 
-        li Updating DOM node style elements over time.
-        li 
-          | Only 
-          code requestAnimationFrame() 
-          | will do.
-
-
-    .step.slide.filler(data-x=w*12)
       h1 elierotenberg/react-animate
 
       ul 
@@ -128,24 +133,25 @@ block body
         a(href="https://github.com/pleasetrythisathome/react.animate") pleasetrythisathome/react.animate
 
 
-    .step.slide.demo(data-x=w*13)
+    .step.slide.demo(data-x=w*12)
       include pages/demos/modal-animate
 
-    .step.slide.filler(data-x=w*14)
-      h1 TransitionGroup with React Animate Pros and Cons
 
-      h4 Pros
+    .step.slide.filler(data-x=w*13)
+      h1 TransitionGroup with react-animate Pros and Cons
+
+      h2 Pros
       ul
-        li Use variables in animation definitions 
+        li Can use variables in animation definitions 
         li Chain animations with callbacks 
 
-      h4 Cons
+      h2 Cons
       ul
         li Harder to maintain with split concerns 
-        li You have to prefix in your application code
+        li You have to add vendor prefixes in your application code
 
 
-    .step.slide.filler(data-x=w*15)
+    .step.slide.filler(data-x=w*14)
       h1 Prefixing
       
       p: a(href="https://github.com/elierotenberg/react-styling-demo#react-css") elierotenberg/react-css fromCSS
@@ -155,25 +161,28 @@ block body
         reactStyle = {
           transform: "translate3d(0, 0, 0)",
           WebkitTransform: "translate3d(0, 0, 0)",
-          MozTransform: "translate3d(0, 0, 0)"
+          MozTransform: "translate3d(0, 0, 0)",
+          msTransform: "translate3d(0, 0, 0)"
         };
 
-    .step.slide.demo(data-x=w*16)
+    .step.slide.demo(data-x=w*15)
       include pages/demos/modal-animate-prefixed-from-css
     
 
-    .step.slide.filler(data-x=w*17)
+    .step.slide.filler(data-x=w*16)
       h1 What next?
 
       ul 
-        li Better understand the issues I have with CSSTransitionGroup
+        li 
+          | Better understand the issues I have with 
+          code CSSTransitionGroup
         li 
           | Investigate 
-          a(href="https://famo.us/") Famo.us
+          a(href="https://famo.us/") Famo.us 
           | and famous-react
 
 
-    .step.slide.filler(data-x=w*19)
+    .step.slide.filler.first(data-x=w*17)
       h1 Thank you
 
       p James Greenaway
