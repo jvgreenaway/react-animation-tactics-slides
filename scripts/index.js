@@ -51,17 +51,13 @@ domready(function() {
   
   var $demoBlocks = $('.demo__code__col');
 
-  console.log($demoBlocks);
-
   $demoBlocks.on('mouseenter', function (e) {
-    console.log('enter');
     var $this = $(this);
     $this.addClass('is-big');
     $this.siblings().addClass('is-small');
   });
 
   $demoBlocks.on('mouseleave', function (e) {
-    console.log('leave');
     var $this = $(this);
     $this.removeClass('is-big');
     $this.siblings().removeClass('is-small');
