@@ -7,3 +7,5 @@ By James Greenaway for London React User Group, November 2014.
   $ bower install
   $ broccoli serve
 ```
+
+![Slideshow](slideshow.gif)
