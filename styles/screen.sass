@@ -14,8 +14,11 @@ body
   background-color: gray
   font-family: $sans
 
-pre
+code
   font-family: $mono
+
+
+pre
   white-space: pre
   overflow: visible
 
@@ -27,24 +30,60 @@ h1, h2, h3, h4, h5, h6
   background-color: gray
   display: block
 
-.item,
-.delay-item,
-.tr-delay-item
-  background-color: blue
-  height: 10px 
-  width: 10px
-  margin: 10px
-  float: left
 
+// Demos
 
+$c: #0D578C
 
-// Slides
 .live
   width: 600px
   height: 400px
-  background-color: red
+  background-color: $c
   position: relative
   overflow: hidden 
+
+  button
+    background-color: transparent
+    border: none
+    color: tint($c, 90%)
+    font-size: 32px
+    font-weight: 700
+    padding: 2px 10px 
+    border: 1px solid tint($c, 75%)
+    margin-bottom: 10px
+    margin-right: 10px
+    border-radius: 6px
+
+  .item,
+  .delay-item,
+  .tr-delay-item
+    background-color: tint($c, 75%)
+    $size: 40px
+    height: $size
+    width: $size
+    margin: $size/2 $size/2 0 $size/2 
+    float: left
+    border-radius: 3px
+
+
+  .tr-delay-item
+    &:nth-child(5n+1)
+      clear: left
+
+
+  .controls
+    position: absolute
+    bottom: 0
+    right: 0
+    z-index: 1
+
+
+.modal
+  &__btn
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translateX(-50%) translateY(-50%) 
 
 
 

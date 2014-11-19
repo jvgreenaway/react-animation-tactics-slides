@@ -6,12 +6,12 @@ module.exports = React.createClass({
   
   getDefaultProps: function() {
     var items = [];
-    for (var i = 1; i <= 10; i++) {
+    for (var i = 1; i <= 30; i++) {
       items.push({id: i});
     };
     return {
       items: items,
-      itemsPerPage: 3
+      itemsPerPage: 5
     };
   },
 
@@ -21,8 +21,12 @@ module.exports = React.createClass({
     };
   },
 
-  nextPage: function() {
+  addPage: function() {
     this.setState({page: this.state.page+1});
+  },
+
+  removePage: function() {
+    this.setState({page: this.state.page-1});
   },
 
   render: function () {    
@@ -46,7 +50,10 @@ module.exports = React.createClass({
           { items.map(renderItem.bind(this)) }
         </CSSTransitionGroup>
 
-        <button onClick={this.nextPage}>Next Page</button>
+        <div className='controls'>
+          <button onClick={this.addPage}>Add</button>
+          <button onClick={this.removePage}>Remove</button>
+        </div>
       </div>
     );
   }

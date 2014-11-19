@@ -3,8 +3,10 @@ var React = require('react/addons'),
     AnimateMixin = require('react-animate')
     fromCSS = require('react-css').fromCSS;
 
-var from = fromCSS('{ transform: translate3d(0, 100%, 0); }'),
-    to = fromCSS('{ transform: translate3d(0, 0%, 0); }');
+var inFrom = fromCSS('{ transform: translate3d(0, 100%, 0); }'),
+    inTo = fromCSS('{ transform: translate3d(0, 0%, 0); }'),
+    outFrom = fromCSS('{ transform: translate3d(0, 0%, 0); }'),
+    outTo = fromCSS('{ transform: translate3d(0, -100%, 0); }');
 
 
 var Modal = React.createClass({
@@ -25,14 +27,24 @@ var Modal = React.createClass({
     function next() {
       this.setState({showPanel: true});
       this.animate('panel', 
-        from, to,
+        inFrom, inTo,
         'in-out', 500, done
       );
     }    
   },
 
   componentWillLeave: function (done) {
-    done();
+    this.animate('panel', 
+      outFrom, outTo,
+      'in-out', 500, next.bind(this)
+    );
+    function next() {
+      this.setState({showPanel: true});
+      this.animate('shade', 
+        {opacity: 1}, {opacity: 0.01},
+        'in-out', 500, done
+      );
+    }    
   },
 
   render: function() {
@@ -81,7 +93,9 @@ module.exports = React.createClass({
           { modal }
         </TransitionGroup>
 
-        <button onClick={this.show}>Show</button>
+        <div className='controls'>
+          <button onClick={this.show}>Show</button>
+        </div>
       </div>
     );
   }

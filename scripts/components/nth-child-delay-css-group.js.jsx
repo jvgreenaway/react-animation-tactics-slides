@@ -43,8 +43,10 @@ module.exports = React.createClass({
           { this.state.show? this.props.items.map(renderItem.bind(this)):[] }
         </CSSTransitionGroup>
 
-        <button onClick={this.show}>Show</button>
-        <button onClick={this.hide}>Hide</button>
+        <div className='controls'>
+          <button onClick={this.show}>Show</button>
+          <button onClick={this.hide}>Hide</button>
+        </div>
       </div>
     );
   }

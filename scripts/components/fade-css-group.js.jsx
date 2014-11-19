@@ -3,14 +3,12 @@ var React = require('react/addons'),
 
 
 module.exports = React.createClass({  
-  displayName: 'FadeInGroup',
-
+  
   getInitialState: function() {
     return {
       items: [0, 0, 0, 0]
     };
   },
-
 
   addItems: function (count) {
     var items = this.state.items;
@@ -28,7 +26,6 @@ module.exports = React.createClass({
     this.setState({items: items});
   },
 
-
   render: function () {
     function renderItem(item, i) {
       return <div key={i} className='item' />;
@@ -40,8 +37,10 @@ module.exports = React.createClass({
           { this.state.items.map(renderItem.bind(this)) }
         </CSSTransitionGroup>
 
-        <button onClick={this.addItems.bind(null, 1)}>Plus</button>
-        <button onClick={this.removeItems.bind(null, 1)}>Minus</button>
+        <div className='controls'>
+          <button onClick={this.addItems.bind(null, 1)}>+</button>
+          <button onClick={this.removeItems.bind(null, 1)}>-</button>
+        </div>
       </div>
     );
   }

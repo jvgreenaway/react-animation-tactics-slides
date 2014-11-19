@@ -36,7 +36,9 @@ module.exports = React.createClass({
           { modalElements }
         </CSSTransitionGroup>
 
-        <button onClick={this.show}>Show</button>
+        <div className='controls'>
+          <button onClick={this.show}>Show</button>
+        </div>
       </div>
     );
   }

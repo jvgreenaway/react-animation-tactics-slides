@@ -5,51 +5,26 @@ block body
   #impress
     - w = 1200 + 80
 
-    .step.slide(data-x=w*0)
-      h1 React Animation Tactics.
-
-    .step.slide.demo(data-x=w*1)
-      include pages/demos/fade-css-group
-    
-    .step.slide.demo(data-x=w*2)
-      include pages/demos/translate-in-group
-
-    .step.slide.demo(data-x=w*3)
-      include pages/demos/modal-css-group
-
-    .step.slide.demo(data-x=w*4)
-      include pages/demos/nth-child-delay-css-group
-
-    .step.slide.demo(data-x=w*5)
-      include pages/demos/tr-child-delay-css-group
-
-    .step.slide.demo(data-x=w*6)
-      include pages/demos/modal-animate
-
-    .step.slide.demo(data-x=w*7)
-      include pages/demos/modal-animate-prefixed-from-css
-
-
-
-    .step.slide.filler(data-x=w*7)
+    .step.slide.filler(data-x=w*0)
       h1 React JS Animations & Tactics
       p James Greenaway
       p @jvgreenaway
 
-    .step.slide.filler(data-x=w*7)
+
+    .step.slide.filler(data-x=w*1)
+      p What I’ve learnt about doing animations and transitions with React JS so far.
+
+
+    .step.slide.filler(data-x=w*2)
       img(src="/images/pixie-labs-logo.svg")
 
-    .step.slide.filler(data-x=w*7)
+    .step.slide.filler(data-x=w*3)
       h1 Wine Cloud Decanter
-      img(src="/images/wine-cloud-decanter-logo.svg")
-      img(src="/images/wine-cloud-decanter-mock.png")
-
-    .step.slide.filler(data-x=w*7)
       img(src="/images/wine-cloud-decanter-logo.svg")
       img(src="/images/wine-cloud-decanter-mock.png")
         
     
-    .step.slide.filler(data-x=w*7)
+    .step.slide.filler(data-x=w*4)
       h1 Web Transitions and Animations
 
       ul
@@ -62,7 +37,7 @@ block body
       a(href="http://www.html5rocks.com/en/tutorials/speed/high-performance-animations/") html5rocks - High Performance Animations
 
 
-    .step.slide.filler(data-x=w*7)
+    .step.slide.filler(data-x=w*5)
       h1 CSSTransitionGroup
 
       ul 
@@ -74,17 +49,31 @@ block body
           code CSSTransitionGroup
           | under the hood
   
-
       a(href="http://facebook.github.io/react/docs/animation.html#high-level-api-reactcsstransitiongroup") React Docs - ReactCSSTransitionGroup
 
 
+    .step.slide.demo(data-x=w*6)
+      include pages/demos/fade-css-group
+    
+    .step.slide.demo(data-x=w*7)
+      include pages/demos/translate-in-group
+    
+    .step.slide.demo(data-x=w*8)
+      include pages/demos/nth-child-delay-css-group
 
-    .step.slide.filler(data-x=w*7)
+    .step.slide.demo(data-x=w*9)
+      include pages/demos/tr-child-delay-css-group
+
+    .step.slide.demo(data-x=w*10)
+      include pages/demos/modal-css-group
+
+
+    .step.slide.filler(data-x=w*11)
       h2 CSSTransitionGroup transitions can fail
       p Only use when animation isn't critical to the UX
 
 
-    .step.slide.filler(data-x=w*7)
+    .step.slide.filler(data-x=w*12)
       h1 TransitionGroup
 
       ul 
@@ -98,7 +87,7 @@ block body
       a(href="http://facebook.github.io/react/docs/animation.html#low-level-api-reacttransitiongroup") React Docs - ReactTransitionGroup
 
 
-    .step.slide.filler(data-x=w*7)
+    .step.slide.filler(data-x=w*13)
       h1 JS Animations
       
       p
@@ -106,7 +95,7 @@ block body
         | or GTFO
 
 
-    .step.slide.filler(data-x=w*7)
+    .step.slide.filler(data-x=w*14)
       h1 Velocity.js
 
       a(href="http://julian.com/research/velocity/") Velocity.js docs
@@ -115,7 +104,7 @@ block body
         strike tkafka/react-VelocityTransitionGroup
 
 
-    .step.slide.filler(data-x=w*7)
+    .step.slide.filler(data-x=w*15)
       h1 React.animate
 
       ul
@@ -125,14 +114,28 @@ block body
           a(href="https://github.com/pleasetrythisathome/react.animate") pleasetrythisathome/react.animate
 
 
-    .step.slide.filler(data-x=w*7)
+    .step.slide.demo(data-x=w*16)
+      include pages/demos/modal-animate
+
+
+    .step.slide.filler(data-x=w*17)
       h1 Prefixing
       
       p: a(href="https://github.com/elierotenberg/react-styling-demo#react-css") elierotenberg/react-css fromCSS
       p: a(href="http://modernizr.com/docs/#prefixed") Modernizr
 
+      pre: code.
+        reactStyle = {
+          transform: "translate3d(0, 0, 0)",
+          WebkitTransform: "translate3d(0, 0, 0)",
+          MozTransform: "translate3d(0, 0, 0)"
+        };
+
+    .step.slide.demo(data-x=w*18)
+      include pages/demos/modal-animate-prefixed-from-css
     
-    .step.slide.filler(data-x=w*7)
+
+    .step.slide.filler(data-x=w*19)
       h1 Thank you
     
 

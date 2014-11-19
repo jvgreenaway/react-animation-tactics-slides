@@ -28,7 +28,17 @@ var Modal = React.createClass({
   },
 
   componentWillLeave: function (done) {
-    done();
+    this.animate('panel', 
+      {transform: 'translate3d(0, 0%, 0)'}, {transform: 'translate3d(0, -100%, 0)'},
+      'in-out', 500, next.bind(this)
+    );
+    function next() {
+      this.setState({showPanel: true});
+      this.animate('shade', 
+        {opacity: 1}, {opacity: 0.01},
+        'in-out', 500, done
+      );
+    }    
   },
 
   render: function() {
@@ -77,7 +87,9 @@ module.exports = React.createClass({
           { modal }
         </TransitionGroup>
 
-        <button onClick={this.show}>Show</button>
+        <div className='controls'>
+          <button onClick={this.show}>Show</button>
+        </div>
       </div>
     );
   }
