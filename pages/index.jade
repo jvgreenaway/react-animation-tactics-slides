@@ -17,14 +17,8 @@ block body
 
     .step.slide.filler(data-x=w*2)
       img(src="/images/pixie-labs-logo.svg")
-
-    .step.slide.filler(data-x=w*3)
-      h1 Wine Cloud Decanter
-      img(src="/images/wine-cloud-decanter-logo.svg")
-      img(src="/images/wine-cloud-decanter-mock.png")
-        
     
-    .step.slide.filler(data-x=w*4)
+    .step.slide.filler(data-x=w*3)
       h1 Web Transitions and Animations
 
       ul
@@ -34,10 +28,11 @@ block body
         li Layout, Paint, Composite
         li GPU acceleration 
         
-      a(href="http://www.html5rocks.com/en/tutorials/speed/high-performance-animations/") html5rocks - High Performance Animations
+      a(href="http://css-tricks.com/almanac/properties/t/transition/") CSS Tricks - Transition
+      a(href="http://www.html5rocks.com/en/tutorials/speed/high-performance-animations/") HTML 5 Rocks - High Performance Animations
+    
 
-
-    .step.slide.filler(data-x=w*5)
+    .step.slide.filler(data-x=w*4)
       h1 CSSTransitionGroup
 
       ul 
@@ -52,28 +47,39 @@ block body
       a(href="http://facebook.github.io/react/docs/animation.html#high-level-api-reactcsstransitiongroup") React Docs - ReactCSSTransitionGroup
 
 
-    .step.slide.demo(data-x=w*6)
+    .step.slide.demo(data-x=w*5)
       include pages/demos/fade-css-group
-    
-    .step.slide.demo(data-x=w*7)
-      include pages/demos/translate-in-group
-    
-    .step.slide.demo(data-x=w*8)
+        
+    .step.slide.demo(data-x=w*6)
       include pages/demos/nth-child-delay-css-group
 
-    .step.slide.demo(data-x=w*9)
+    .step.slide.demo(data-x=w*7)
       include pages/demos/tr-child-delay-css-group
 
-    .step.slide.demo(data-x=w*10)
+    .step.slide.demo(data-x=w*8)
       include pages/demos/modal-css-group
 
 
-    .step.slide.filler(data-x=w*11)
-      h2 CSSTransitionGroup transitions can fail
-      p Only use when animation isn't critical to the UX
+    .step.slide.filler(data-x=w*9)
+      h2 CSSTransitionGroup Pros and Cons
+      
+      h4 Pro
+      ul
+        li Nice to keep styles and animations together
+        li You can use Autoprefixer as part of your build
+
+      h4 Con
+      ul
+        li Batch updates can cause Transitions to fail
+        li May cause CSS bloat
+        li Defining delayed animation as time rather than using a callback can be odd
+        li 
+          | Risk of 
+          i magic numbers
 
 
-    .step.slide.filler(data-x=w*12)
+
+    .step.slide.filler(data-x=w*10)
       h1 TransitionGroup
 
       ul 
@@ -87,38 +93,50 @@ block body
       a(href="http://facebook.github.io/react/docs/animation.html#low-level-api-reacttransitiongroup") React Docs - ReactTransitionGroup
 
 
-    .step.slide.filler(data-x=w*13)
+    .step.slide.filler(data-x=w*11)
       h1 JS Animations
       
-      p
-        code requestAnimationFrame() 
-        | or GTFO
+      p Updating DOM node style elements over time.
 
+      p
+        | Only 
+        code requestAnimationFrame() 
+        | will do.
+      
+
+
+    .step.slide.filler(data-x=w*12)
+      h1 elierotenberg/react-animate
+
+      ul 
+        li 
+          | Uses 
+          code requestAnimationFrame 
+          | with fallback
+        li D3 Easing functions
+        li Nice API via mixin
+      
+      a(href="https://github.com/pleasetrythisathome/react.animate") pleasetrythisathome/react.animate
+
+
+    .step.slide.demo(data-x=w*13)
+      include pages/demos/modal-animate
 
     .step.slide.filler(data-x=w*14)
-      h1 Velocity.js
+      h2 TransitionGroup and React Animate Pros and Cons
 
-      a(href="http://julian.com/research/velocity/") Velocity.js docs
+      h3 Pros
+      ul
+        li Use variables in animation definitions 
+        li Chain animations with callbacks 
 
-      a(href="https://github.com/tkafka/react-VelocityTransitionGroup")
-        strike tkafka/react-VelocityTransitionGroup
+      h3 Cons
+      ul
+        li Harder to maintain with split concerns 
+        li You have to prefix in your application code
 
 
     .step.slide.filler(data-x=w*15)
-      h1 React.animate
-
-      ul
-        li
-          strong: a(href="https://github.com/elierotenberg/react-animate") elierotenberg/react-animate
-        li
-          a(href="https://github.com/pleasetrythisathome/react.animate") pleasetrythisathome/react.animate
-
-
-    .step.slide.demo(data-x=w*16)
-      include pages/demos/modal-animate
-
-
-    .step.slide.filler(data-x=w*17)
       h1 Prefixing
       
       p: a(href="https://github.com/elierotenberg/react-styling-demo#react-css") elierotenberg/react-css fromCSS
@@ -131,9 +149,20 @@ block body
           MozTransform: "translate3d(0, 0, 0)"
         };
 
-    .step.slide.demo(data-x=w*18)
+    .step.slide.demo(data-x=w*16)
       include pages/demos/modal-animate-prefixed-from-css
     
+
+    .step.slide.filler(data-x=w*17)
+      h1 What next?
+
+      ul 
+        li Better understand the issues I have with CSSTransitionGroup
+        li 
+          | Investigate 
+          a(href="https://famo.us/") Famo.us
+          | and famous-react
+
 
     .step.slide.filler(data-x=w*19)
       h1 Thank you

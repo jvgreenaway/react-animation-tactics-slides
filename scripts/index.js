@@ -18,10 +18,10 @@ domready(function() {
     document.getElementById('fade-css-group-demo')
   );  
 
-  React.render(
-    TranslateInGroup(), 
-    document.getElementById('translate-in-group-demo')
-  );  
+  // React.render(
+  //   TranslateInGroup(), 
+  //   document.getElementById('translate-in-group-demo')
+  // );  
 
   React.render(
     ModalCSSGroup(), 
